@@ -16,7 +16,7 @@ class InteractiveScrollViewer extends StatefulWidget {
       this.boundaryMargin = EdgeInsets.zero,
       // These default scale values were eyeballed as reasonable
       //limits for common use cases.
-      this.maxScale = 3,
+      this.maxScale = 200,
       this.minScale = 1,
       this.onInteractionStart,
       this.onInteractionUpdate,
