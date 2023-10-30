@@ -1,144 +1,516 @@
-<img src="https://cdn.syncfusion.com/content/images/flutter-widgets-banner-1.png"/>
+﻿![syncfusion_flutter_pdfviewer](https://cdn.syncfusion.com/content/images/pdfviewer-banner.png)
 
-# Syncfusion Flutter Widgets
+# Flutter PDF Viewer library
 
-Syncfusion Flutter widgets libraries include high-quality UI widgets and file-format packages to help you create rich, high-quality applications for iOS, Android, and web from a single code base.
+The Flutter PDF Viewer plugin lets you view the PDF documents seamlessly and efficiently in the Android, iOS, Web, Windows and macOS platforms. It has highly interactive and customizable features such as magnification, virtual bidirectional scrolling, page navigation, text selection, text search, page layout options, document link navigation, and bookmark navigation.
 
-**Disclaimer:** This is a commercial package. To use our packages, you need to have either the Syncfusion Commercial License or Syncfusion Community license. For more details, please check the [LICENSE](https://github.com/syncfusion/flutter-examples/blob/master/LICENSE) file.
-
-**Note:** Our packages are now compatible with Flutter for Web. However, this will be in Beta until Flutter for Web becomes stable.
-
-<img src="https://cdn.syncfusion.com/content/images/flutter-widgets-collage.png"/>
-
+**Disclaimer:** This is a commercial package. To use this package, you need to have either a Syncfusion commercial license or [Free Syncfusion Community license](https://www.syncfusion.com/products/communitylicense). For more details, please check the [LICENSE](https://github.com/syncfusion/flutter-examples/blob/master/LICENSE) file.
 
 ## Table of contents
-- [Repository structure](#repository-structure)
-- [Packages](#packages)
-- [How to use](#how-to-use)
-  - [Referring packages source in your application](#referring-packages-source-in-your-application)
-  - [Running the available example](#running-the-available-example)
+- [PDF Viewer features](#pdf-viewer-features)
 - [Get the demo application](#get-the-demo-application)
-- [Useful links](#useful-links)
+- [Useful links](#other-useful-links)
+- [Installation](#installation)
+- [Getting started](#getting-started)
+    - [Add PDF Viewer to the widget tree](#add-pdf-viewer-to-the-widget-tree)
+    - [Load encrypted PDF document](#load-encrypted-pdf-document)
+    - [Customize the visibility of scroll head and scroll status](#customize-the-visibility-of-scroll-head-and-scroll-status)
+    - [Customize the visibility of page navigation dialog](#customize-the-visibility-of-page-navigation-dialog)
+    - [Customize the visibility of password dialog](#customize-the-visibility-of-password-dialog)
+	- [Enable or disable the double-tap zoom ](#enable-or-disable-the-double-tap-zoom)
+	- [Change the page layout](#change-the-page-layout)
+	- [Switch scroll direction](#switch-scroll-direction)
+	- [Change the zoom level factor](#change-the-zoom-level-factor)
+	- [Navigate to the desired pages](#navigate-to-the-desired-pages)
+	- [Navigate to the desired bookmark topics](#navigate-to-the-desired-bookmark-topics)
+	- [Select and copy text](#select-and-copy-text)
+	- [Search text and navigate to its occurrences](#search-text-and-navigate-to-its-occurrences)
+	- [Enable or disable the document link annotation](#enable-or-disable-the-document-link-annotation)
 - [Support and feedback](#support-and-feedback)
 - [About Syncfusion](#about-syncfusion)
 
-## Repository structure
+## PDF Viewer features
 
-This repository holds the source code of all the Syncfusion Flutter widgets and libraries. Source code of the widget, a working example, read me, changelog, etc., files are available in the `packages` directory.
+* **Virtual Scrolling** - Easily scroll through the pages in the document with a fluent experience. The pages are rendered only when required to increase the loading and scrolling performance.
 
-Also, you can view the samples code from [this repository](https://github.com/syncfusion/flutter-examples).
+* **Magnification** - The content of the document can be efficiently zoomed in and out.
 
-## Packages
+* **Page Layout and Scroll Options** - Layout the pages efficiently in a page by page (single page) scrolling mode or continuous scrolling mode. Also, scroll through pages in both horizontal and vertical direction.
 
-| Package/Plugin | Available widgets/libraries | Pub | Points | Popularity | Likes |
-|----------------|-----------------------------|-----|--------|------------|-------|
-| [syncfusion_flutter_charts](./packages/syncfusion_flutter_charts/) | <ul><li>SfCartesianChart</li><li>SfCircularChart</li><li>SfPyramidChart</li><li>SfFunnelChart</li></ul> | [![pub package](https://img.shields.io/pub/v/syncfusion_flutter_charts.svg)](https://pub.dev/packages/syncfusion_flutter_charts) | [![pub points](https://badges.bar/syncfusion_flutter_charts/pub%20points)](https://pub.dev/packages/syncfusion_flutter_charts/score) |  [![popularity](https://badges.bar/syncfusion_flutter_charts/popularity)](https://pub.dev/packages/syncfusion_flutter_charts/score) | [![likes](https://badges.bar/syncfusion_flutter_charts/likes)](https://pub.dev/packages/syncfusion_flutter_charts/score) |
-| [syncfusion_flutter_calendar](./packages/syncfusion_flutter_calendar/) | <ul><li>SfCalendar</li></ul> | [![pub package](https://img.shields.io/pub/v/syncfusion_flutter_calendar.svg)](https://pub.dev/packages/syncfusion_flutter_calendar) | [![pub points](https://badges.bar/syncfusion_flutter_calendar/pub%20points)](https://pub.dev/packages/syncfusion_flutter_calendar/score) |  [![popularity](https://badges.bar/syncfusion_flutter_calendar/popularity)](https://pub.dev/packages/syncfusion_flutter_calendar/score) | [![likes](https://badges.bar/syncfusion_flutter_calendar/likes)](https://pub.dev/packages/syncfusion_flutter_calendar/score) |
-| [syncfusion_flutter_datagrid](./packages/syncfusion_flutter_datagrid/) | <ul><li>SfDataGrid</li></ul> | [![pub package](https://img.shields.io/pub/v/syncfusion_flutter_datagrid.svg)](https://pub.dev/packages/syncfusion_flutter_datagrid) | [![pub points](https://badges.bar/syncfusion_flutter_datagrid/pub%20points)](https://pub.dev/packages/syncfusion_flutter_datagrid/score) |  [![popularity](https://badges.bar/syncfusion_flutter_datagrid/popularity)](https://pub.dev/packages/syncfusion_flutter_datagrid/score) | [![likes](https://badges.bar/syncfusion_flutter_datagrid/likes)](https://pub.dev/packages/syncfusion_flutter_datagrid/score) |
-| [syncfusion_flutter_pdfviewer](./packages/syncfusion_flutter_pdfviewer/) | <ul><li>SfPdfViewer</li></ul> | [![pub package](https://img.shields.io/pub/v/syncfusion_flutter_pdfviewer.svg)](https://pub.dev/packages/syncfusion_flutter_pdfviewer) | [![pub points](https://badges.bar/syncfusion_flutter_pdfviewer/pub%20points)](https://pub.dev/packages/syncfusion_flutter_pdfviewer/score) |  [![popularity](https://badges.bar/syncfusion_flutter_pdfviewer/popularity)](https://pub.dev/packages/syncfusion_flutter_pdfviewer/score) | [![likes](https://badges.bar/syncfusion_flutter_pdfviewer/likes)](https://pub.dev/packages/syncfusion_flutter_pdfviewer/score) |
-| [syncfusion_flutter_pdf](./packages/syncfusion_flutter_pdf/) | <ul><li>PDF library</li></ul> | [![pub package](https://img.shields.io/pub/v/syncfusion_flutter_pdf.svg)](https://pub.dev/packages/syncfusion_flutter_pdf) | [![pub points](https://badges.bar/syncfusion_flutter_pdf/pub%20points)](https://pub.dev/packages/syncfusion_flutter_pdf/score) |  [![popularity](https://badges.bar/syncfusion_flutter_pdf/popularity)](https://pub.dev/packages/syncfusion_flutter_pdf/score) | [![likes](https://badges.bar/syncfusion_flutter_pdf/likes)](https://pub.dev/packages/syncfusion_flutter_pdf/score) |
-| [syncfusion_flutter_xlsio](./packages/syncfusion_flutter_xlsio/) | <ul><li>XlsIO library</li></ul> | [![pub package](https://img.shields.io/pub/v/syncfusion_flutter_xlsio.svg)](https://pub.dev/packages/syncfusion_flutter_xlsio) | [![pub points](https://badges.bar/syncfusion_flutter_xlsio/pub%20points)](https://pub.dev/packages/syncfusion_flutter_xlsio/score) |  [![popularity](https://badges.bar/syncfusion_flutter_xlsio/popularity)](https://pub.dev/packages/syncfusion_flutter_xlsio/score) | [![likes](https://badges.bar/syncfusion_flutter_xlsio/likes)](https://pub.dev/packages/syncfusion_flutter_xlsio/score) |
-| [syncfusion_flutter_datepicker](./packages/syncfusion_flutter_datepicker/) | <ul><li>SfDateRangePicker</li></ul> | [![pub package](https://img.shields.io/pub/v/syncfusion_flutter_datepicker.svg)](https://pub.dev/packages/syncfusion_flutter_datepicker) | [![pub points](https://badges.bar/syncfusion_flutter_datepicker/pub%20points)](https://pub.dev/packages/syncfusion_flutter_datepicker/score) |  [![popularity](https://badges.bar/syncfusion_flutter_datepicker/popularity)](https://pub.dev/packages/syncfusion_flutter_datepicker/score) | [![likes](https://badges.bar/syncfusion_flutter_datepicker/likes)](https://pub.dev/packages/syncfusion_flutter_datepicker/score) |
-| [syncfusion_flutter_maps](./packages/syncfusion_flutter_maps/) | <ul><li>SfMaps</li></ul> | [![pub package](https://img.shields.io/pub/v/syncfusion_flutter_maps.svg)](https://pub.dev/packages/syncfusion_flutter_maps) | [![pub points](https://badges.bar/syncfusion_flutter_maps/pub%20points)](https://pub.dev/packages/syncfusion_flutter_maps/score) |  [![popularity](https://badges.bar/syncfusion_flutter_maps/popularity)](https://pub.dev/packages/syncfusion_flutter_maps/score) | [![likes](https://badges.bar/syncfusion_flutter_maps/likes)](https://pub.dev/packages/syncfusion_flutter_maps/score) |
-| [syncfusion_flutter_gauges](./packages/syncfusion_flutter_gauges/) | <ul><li>SfRadialGauge</li></ul> | [![pub package](https://img.shields.io/pub/v/syncfusion_flutter_gauges.svg)](https://pub.dev/packages/syncfusion_flutter_gauges) | [![pub points](https://badges.bar/syncfusion_flutter_gauges/pub%20points)](https://pub.dev/packages/syncfusion_flutter_gauges/score) |  [![popularity](https://badges.bar/syncfusion_flutter_gauges/popularity)](https://pub.dev/packages/syncfusion_flutter_gauges/score) | [![likes](https://badges.bar/syncfusion_flutter_gauges/likes)](https://pub.dev/packages/syncfusion_flutter_gauges/score) |
-| [syncfusion_flutter_sliders](./packages/syncfusion_flutter_sliders/) | <ul><li>SfSlider</li><li>SfRangeSlider</li><li>SfRangeSelector</li></ul> | [![pub package](https://img.shields.io/pub/v/syncfusion_flutter_sliders.svg)](https://pub.dev/packages/syncfusion_flutter_sliders) | [![pub points](https://badges.bar/syncfusion_flutter_sliders/pub%20points)](https://pub.dev/packages/syncfusion_flutter_sliders/score) |  [![popularity](https://badges.bar/syncfusion_flutter_sliders/popularity)](https://pub.dev/packages/syncfusion_flutter_sliders/score) | [![likes](https://badges.bar/syncfusion_flutter_sliders/likes)](https://pub.dev/packages/syncfusion_flutter_sliders/score) |
-| [syncfusion_flutter_signaturepad](./packages/syncfusion_flutter_signaturepad/) | <ul><li>SfSignaturePad</li></ul> | [![pub package](https://img.shields.io/pub/v/syncfusion_flutter_signaturepad.svg)](https://pub.dev/packages/syncfusion_flutter_signaturepad) | [![pub points](https://badges.bar/syncfusion_flutter_signaturepad/pub%20points)](https://pub.dev/packages/syncfusion_flutter_signaturepad/score) |  [![popularity](https://badges.bar/syncfusion_flutter_signaturepad/popularity)](https://pub.dev/packages/syncfusion_flutter_signaturepad/score) | [![likes](https://badges.bar/syncfusion_flutter_signaturepad/likes)](https://pub.dev/packages/syncfusion_flutter_signaturepad/score) |
-| [syncfusion_flutter_barcodes](./packages/syncfusion_flutter_barcodes/) | <ul><li>SfBarcodeGenerator</li></ul> | [![pub package](https://img.shields.io/pub/v/syncfusion_flutter_barcodes.svg)](https://pub.dev/packages/syncfusion_flutter_barcodes) | [![pub points](https://badges.bar/syncfusion_flutter_barcodes/pub%20points)](https://pub.dev/packages/syncfusion_flutter_barcodes/score) |  [![popularity](https://badges.bar/syncfusion_flutter_barcodes/popularity)](https://pub.dev/packages/syncfusion_flutter_barcodes/score) | [![likes](https://badges.bar/syncfusion_flutter_barcodes/likes)](https://pub.dev/packages/syncfusion_flutter_barcodes/score) |
-| [syncfusion_officechart](./packages/syncfusion_officechart/) | <ul><li>Office chart library</li></ul> | [![pub package](https://img.shields.io/pub/v/syncfusion_officechart.svg)](https://pub.dev/packages/syncfusion_officechart) | [![pub points](https://badges.bar/syncfusion_officechart/pub%20points)](https://pub.dev/packages/syncfusion_officechart/score) |  [![popularity](https://badges.bar/syncfusion_officechart/popularity)](https://pub.dev/packages/syncfusion_officechart/score) | [![likes](https://badges.bar/syncfusion_officechart/likes)](https://pub.dev/packages/syncfusion_officechart/score) |
-| [syncfusion_officecore](./packages/syncfusion_officecore/) | This package is a dependecy package for `Office chart` library. | [![pub package](https://img.shields.io/pub/v/syncfusion_officecore.svg)](https://pub.dev/packages/syncfusion_officecore) | [![pub points](https://badges.bar/syncfusion_officecore/pub%20points)](https://pub.dev/packages/syncfusion_officecore/score) |  [![popularity](https://badges.bar/syncfusion_officecore/popularity)](https://pub.dev/packages/syncfusion_officecore/score) | [![likes](https://badges.bar/syncfusion_officecore/likes)](https://pub.dev/packages/syncfusion_officecore/score) |
-| [syncfusion_flutter_core](./packages/syncfusion_flutter_core/) | This package is a dependecy package for all the Syncfusion Flutter widgets and libraries. | [![pub package](https://img.shields.io/pub/v/syncfusion_flutter_core.svg)](https://pub.dev/packages/syncfusion_flutter_core) | [![pub points](https://badges.bar/syncfusion_flutter_core/pub%20points)](https://pub.dev/packages/syncfusion_flutter_core/score) |  [![popularity](https://badges.bar/syncfusion_flutter_core/popularity)](https://pub.dev/packages/syncfusion_flutter_core/score) | [![likes](https://badges.bar/syncfusion_flutter_core/likes)](https://pub.dev/packages/syncfusion_flutter_core/score) |
-| [syncfusion_localizations](./packages/syncfusion_localizations/) | This package contains localized text for 77 cultures for all the applicable Syncfusion Flutter Widgets.| [![pub package](https://img.shields.io/pub/v/syncfusion_localizations.svg)](https://pub.dev/packages/syncfusion_localizations) | [![pub points](https://badges.bar/syncfusion_localizations/pub%20points)](https://pub.dev/packages/syncfusion_localizations/score) |  [![popularity](https://badges.bar/syncfusion_localizations/popularity)](https://pub.dev/packages/syncfusion_localizations/score) | [![likes](https://badges.bar/syncfusion_localizations/likes)](https://pub.dev/packages/syncfusion_localizations/score) |
+* **Page navigation** - Navigate to the desired pages instantly.
+![syncfusion_flutter_pdfviewer_page_navigation](https://cdn.syncfusion.com/content/images/PDFViewer/pagination-dialog.png)
 
-## How to use
+* **Text selection** - Select text presented in a PDF document.
+![syncfusion_flutter_pdfviewer_text_selection](https://cdn.syncfusion.com/content/images/PDFViewer/text-selection.png)
 
-### Referring packages source in your application
+* **Text search** - Search for text and navigate to all its occurrences in a PDF document instantly.
+![syncfusion_flutter_pdfviewer_text_search](https://cdn.syncfusion.com/content/images/PDFViewer/text-search.png)
 
-All the packages available in the `packages` folder can be referred in your application by following the below steps.
+* **Bookmark navigation** - Bookmarks saved in the document are loaded and made ready for easy navigation. This feature helps in navigation within the PDF document of the topics bookmarked already.
+![syncfusion_flutter_pdfviewer_bookmark_navigation](https://cdn.syncfusion.com/content/images/PDFViewer/bookmark-navigation.png)
 
-**Step 1**
+* **Document link annotation** - Navigate to the desired topic or position by tapping the document link annotation of the topics in the table of contents in a PDF document.
 
-Clone the [flutter-widgets]() repository into your machine.
+* **Themes** - Easily switch between the light and dark theme.
+![syncfusion_flutter_pdfviewer_theme](https://cdn.syncfusion.com/content/images/PDFViewer/bookmark-navigation-dark.png)
 
-**Step 2**
-
-Refer the required package in your application's `pubspec.yaml` file by mentioning its local path. For example, here we have referred the charts package.
-
-```dart
-syncfusion_flutter_charts:
-    path: D:/flutter-widgets/packages/syncfusion_flutter_charts
-```
-
-**Step 3**
-
-Run the following command to get the required packages.
-
-```dart
-$ flutter pub get
-```
-
-**Step 4**
-
-Run your application either using `F5` or `Run > Start Debugging`.
-
-### Running the available example
-
-All the packages available in the `packages` folder has an example and it can be run by following the below steps.
-
-**Step 1**
-
-Clone the [flutter-widgets]() repository into your machine.
-
-**Step 2**
-
-Open the example folder available in packages in an IDE. The below path is for reference.
-
-```dart
-..\flutter-widgets\packages\syncfusion_flutter_charts\example
-```
-
-**Step 3**
-
-Run the following command to get the required packages.
-
-```dart
-$ flutter pub get
-```
-
-**Note:** In the example, packages are referred from the local folder which is available in this repository. If you wish, you can also refer the packages from [pub](https://pub.dev).
-
-**Step 4**
-
-Run your application either using `F5` or `Run > Start Debugging`.
+* **Localization** - All static text within the PDF Viewer can be localized to any supported language.
+![syncfusion_flutter_pdfviewer_localization](https://cdn.syncfusion.com/content/images/PDFViewer/localization.png)
 
 ## Get the demo application
 
 Explore the full capabilities of our Flutter widgets on your device by installing our sample browser applications from the below app stores, and view samples code in GitHub.
 
 <p align="center">
-  <a href="https://play.google.com/store/apps/details?id=com.syncfusion.flutter.examples"><img src="https://cdn.syncfusion.com/content/images/FTControl/google-play.png"/></a>
-  <a href="https://apps.apple.com/us/app/syncfusion-flutter-ui-widgets/id1475231341"><img src="https://cdn.syncfusion.com/content/images/FTControl/apple-button.png"/></a>
-  </p>
-  <p align="center">
-  <a href="https://github.com/syncfusion/flutter-examples"><img src="https://cdn.syncfusion.com/content/images/FTControl/GitHub.png"/></a>
-  <a href="https://flutter.syncfusion.com"><img src="https://cdn.syncfusion.com/content/images/FTControl/web_sample_browser.png"/></a>  
+  <a href="https://play.google.com/store/apps/details?id=com.syncfusion.flutter.examples"><img src="https://cdn.syncfusion.com/content/images/FTControl/google-play-store.png"/></a>
+  <a href="https://flutter.syncfusion.com"><img src="https://cdn.syncfusion.com/content/images/FTControl/web-sample-browser.png"/></a>
+  <a href="https://www.microsoft.com/en-us/p/syncfusion-flutter-gallery/9nhnbwcsf85d?activetab=pivot:overviewtab"><img src="https://cdn.syncfusion.com/content/images/FTControl/windows-store.png"/></a> 
+</p>
+<p align="center">
+  <a href="https://install.appcenter.ms/orgs/syncfusion-demos/apps/syncfusion-flutter-gallery/distribution_groups/release"><img src="https://cdn.syncfusion.com/content/images/FTControl/macos-app-center.png"/></a>
+  <a href="https://snapcraft.io/syncfusion-flutter-gallery"><img src="https://cdn.syncfusion.com/content/images/FTControl/snap-store.png"/></a>
+  <a href="https://github.com/syncfusion/flutter-examples"><img src="https://cdn.syncfusion.com/content/images/FTControl/github-samples.png"/></a>
 </p>
 
-## Useful links
-Take a look at the following to learn more about Syncfusion Flutter widgets:
+## Other useful links
 
-* [Syncfusion Flutter product page](https://www.syncfusion.com/flutter-widgets)
-* [User guide documentation](https://help.syncfusion.com/flutter/introduction/overview)
-* [API reference](https://help.syncfusion.com/flutter/introduction/api-reference)
-* [Knowledge base](https://www.syncfusion.com/kb/flutter)
-* [Video tutorials](https://www.syncfusion.com/tutorial-videos/flutter)
+Take a look at the following to learn more about Syncfusion Flutter PDF Viewer:
 
-## Support and feedback
+* [Syncfusion Flutter PDF Viewer product page](https://www.syncfusion.com/flutter-widgets/flutter-pdf-viewer)
+* [User guide documentation](https://help.syncfusion.com/flutter/pdf-viewer/overview)
 
-* For any other queries, reach our [Syncfusion support team](https://www.syncfusion.com/support/directtrac/incidents/newincident) or post the queries through the [Community forums](https://www.syncfusion.com/forums) and submit a feature request or a bug through our [Feedback portal](https://www.syncfusion.com/feedback/flutter).
+## Installation
+
+Install the latest version from [pub](https://pub.dev/packages/syncfusion_flutter_pdfviewer/install).
+
+## Getting started
+
+Import the following package.
+
+```dart
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
+```
+
+## Add PDF Viewer to the widget tree
+
+Add the SfPdfViewer widget as a child of any widget. Here, the SfPdfViewer widget is added as a child of the Container widget.
+
+```dart
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+      body: Container(
+          child: SfPdfViewer.network(
+              'https://cdn.syncfusion.com/content/PDFViewer/flutter-succinctly.pdf')));
+}
+```
+
+### Web integration
+
+We have used [PdfJs](https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.4.456/pdf.min.js) for rendering the PDF page as an image on the web platform, so the script file must be referred to in your `web/index.html` file.
+
+On your `web/index.html` file, add the following `script` tags, somewhere in the `body` of the document:
+
+```html
+<script src="//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.4.456/pdf.min.js"></script>
+<script type="text/javascript">
+   pdfjsLib.GlobalWorkerOptions.workerSrc = "//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.4.456/pdf.worker.min.js";
+</script>
+```
+
+## Load encrypted PDF document
+
+Encrypted or password-protected document can be loaded in the SfPdfViewer widget by specifying the password in **password** property.
+
+```dart
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+      body: Container(
+          child: SfPdfViewer.network(
+              'https://cdn.syncfusion.com/content/PDFViewer/encrypted.pdf',
+              password: 'syncfusion')));
+}
+```
+
+## Customize the visibility of scroll head and scroll status
+
+As a default, the SfPdfViewer displays the scroll head and scroll status. You can customize the visibility of these items using the **canShowScrollHead** and **canShowScrollStatus** properties.
+
+```dart
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+      body: Container(
+          child: SfPdfViewer.network(
+              'https://cdn.syncfusion.com/content/PDFViewer/flutter-succinctly.pdf',
+              canShowScrollHead: false,
+              canShowScrollStatus: false)));
+}
+```
+
+## Customize the visibility of page navigation dialog
+
+As a default, the page navigation dialog will be displayed when the scroll head is tapped. You can customize the visibility of the page navigation dialog using the **canShowPaginationDialog** property.
+
+```dart
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+      body: Container(
+          child: SfPdfViewer.network(
+              'https://cdn.syncfusion.com/content/PDFViewer/flutter-succinctly.pdf',
+              canShowPaginationDialog: false)));
+}
+```
+
+## Customize the visibility of password dialog
+
+As a default, the password dialog will be displayed when a password-protected or encrypted document is loaded. You can customize the visibility of the password dialog using the **canShowPasswordDialog** property.
+
+```dart
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+      body: Container(
+          child: SfPdfViewer.network(
+              'https://cdn.syncfusion.com/content/PDFViewer/encrypted.pdf',
+              canShowPasswordDialog: false)));
+}
+```
+
+## Change the page layout
+
+Page layout modes describe how the PDF page is displayed. As a default, the page layout will be in continuous mode. You can change the page layout mode using the **pageLayoutMode** property.
+
+```dart
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+      body: Container(
+          child: SfPdfViewer.network(
+              'https://cdn.syncfusion.com/content/PDFViewer/flutter-succinctly.pdf', 
+             pageLayoutMode: PdfPageLayoutMode.single)));
+}
+```
+
+## Switch scroll direction
+
+Scrolling options describe how the PDF pages can be scrolled. As a default, the page will be scrolled in vertical direction. You can change the scroll direction using the **scrollDirection** property. In Single page layout mode, only horizontal scrolling is supported.
+
+```dart
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+      body: Container(
+          child: SfPdfViewer.network(
+              'https://cdn.syncfusion.com/content/PDFViewer/flutter-succinctly.pdf', 
+             scrollDirection: PdfScrollDirection.horizontal)));
+}
+```
+
+## Enable or disable the double-tap zoom
+
+As a default, the SfPdfViewer will be zoomed in and out when double-tapped. You can enable or disable the double-tap zoom using the **enableDoubleTapZooming** property.
+
+```dart
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+      body: Container(
+          child: SfPdfViewer.network(
+              'https://cdn.syncfusion.com/content/PDFViewer/flutter-succinctly.pdf',
+              enableDoubleTapZooming: false)));
+}
+```
+
+## Change the zoom level factor
+
+The content of the document can be zoomed in and out either by pinch and zoom or changing the zoom level factor programmatically. You can change or control the zoom level factor using the **zoomLevel** property. The zoom level factor value can be set between 1.0 and 3.0.
+
+```dart
+PdfViewerController _pdfViewerController;
+
+@override
+void initState() {
+  _pdfViewerController = PdfViewerController();
+  super.initState();
+}
+
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: Text('Syncfusion Flutter PdfViewer'),
+      actions: <Widget>[
+        IconButton(
+          icon: Icon(
+            Icons.zoom_in,
+            color: Colors.white,
+          ),
+          onPressed: () {
+            _pdfViewerController.zoomLevel = 2;
+          },
+        ),
+      ],
+    ),
+    body: SfPdfViewer.network(
+      'https://cdn.syncfusion.com/content/PDFViewer/flutter-succinctly.pdf',
+      controller: _pdfViewerController,
+    ),
+  );
+}
+```
+## Navigate to the desired pages
+
+The SfPdfViewer provides options to navigate to the desired pages using the following controller methods.
+
+* **jumpToPage()** - Navigates to the specified page number in a PDF document.
+* **nextPage()** - Navigates to the next page of a PDF document.
+* **previousPage()** - Navigates to the previous page of a PDF document.
+* **firstPage()** - Navigates to the first page of a PDF document.
+* **lastPage()** - Navigates to the last page of a PDF document.
+
+```dart
+PdfViewerController _pdfViewerController;
+
+@override
+void initState() {
+  _pdfViewerController = PdfViewerController();
+  super.initState();
+}
+
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: Text('Syncfusion Flutter PdfViewer'),
+      actions: <Widget>[
+        IconButton(
+          icon: Icon(
+            Icons.keyboard_arrow_up,
+            color: Colors.white,
+          ),
+          onPressed: () {
+            _pdfViewerController.previousPage();
+          },
+        ),
+        IconButton(
+          icon: Icon(
+            Icons.keyboard_arrow_down,
+            color: Colors.white,
+          ),
+          onPressed: () {
+            _pdfViewerController.nextPage();
+          },
+        )
+      ],
+    ),
+    body: SfPdfViewer.network(
+      'https://cdn.syncfusion.com/content/PDFViewer/flutter-succinctly.pdf',
+      controller: _pdfViewerController,
+    ),
+  );
+}
+```
+
+## Navigate to the desired bookmark topics
+
+As a default, the SfPdfViewer provides a default bookmark view to navigate to the bookmarked topics. You can also navigate to the desired bookmark topic programmatically using the **jumpToBookmark()** controller method.
+
+```dart
+final GlobalKey<SfPdfViewerState> _pdfViewerKey = GlobalKey();
+
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: Text('Syncfusion Flutter PdfViewer'),
+      actions: <Widget>[
+        IconButton(
+          icon: Icon(
+            Icons. bookmark,
+            color: Colors.white,
+          ),
+          onPressed: () {
+            _pdfViewerKey.currentState?.openBookmarkView();
+          },
+        ),
+      ],
+    ),
+    body: SfPdfViewer.network(
+      'https://cdn.syncfusion.com/content/PDFViewer/flutter-succinctly.pdf',
+      key: _pdfViewerKey,
+    ),
+  );
+}
+```
+
+## Select and copy text
+
+By default, the PDF Viewer provides selection support for text in a PDF document. You can enable or disable selection using the **enableTextSelection** property. Whenever selection is changed, an **onTextSelectionChanged** callback is triggered with global selection region and selected text details. Based on these details, a context menu can be shown and a copy of the text can be performed.
+
+```dart
+PdfViewerController _pdfViewerController;
+
+@override
+void initState() {
+  _pdfViewerController = PdfViewerController();
+  super.initState();
+}
+
+OverlayEntry _overlayEntry;
+void _showContextMenu(BuildContext context,PdfTextSelectionChangedDetails details) {
+  final OverlayState _overlayState = Overlay.of(context);
+  _overlayEntry = OverlayEntry(
+    builder: (context) => Positioned(
+      top: details.globalSelectedRegion.center.dy - 55,
+      left: details.globalSelectedRegion.bottomLeft.dx,
+      child:
+      RaisedButton(child: Text('Copy',style: TextStyle(fontSize: 17)),onPressed: (){
+        Clipboard.setData(ClipboardData(text: details.selectedText));
+        _pdfViewerController.clearSelection();
+      },color: Colors.white,elevation: 10,),
+    ),
+  );
+  _overlayState.insert(_overlayEntry);
+}
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: Text('Syncfusion Flutter PdfViewer'),
+    ),
+    body: SfPdfViewer.network(
+      'https://cdn.syncfusion.com/content/PDFViewer/flutter-succinctly.pdf',
+      onTextSelectionChanged:
+          (PdfTextSelectionChangedDetails details) {
+        if (details.selectedText == null && _overlayEntry != null) {
+          _overlayEntry.remove();
+          _overlayEntry = null;
+        } else if (details.selectedText != null && _overlayEntry == null) {
+          _showContextMenu(context, details);
+        }
+      },
+      controller: _pdfViewerController,
+    ),
+  );
+}
+```
+
+## Search text and navigate to its occurrences
+
+Text can be searched for in a PDF document and you can then navigate to all its occurrences. The navigation of searched text can be controlled using the **nextInstance**, **previousInstance**, and **clear** methods.
+
+```dart
+
+  late PdfViewerController _pdfViewerController;
+  late PdfTextSearchResult _searchResult;
+
+  @override
+  void initState() {
+    _pdfViewerController = PdfViewerController();
+    _searchResult = PdfTextSearchResult();
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text('Syncfusion Flutter PdfViewer'),
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(
+                Icons.search,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                _searchResult = _pdfViewerController.searchText('the',
+                    searchOption: TextSearchOption.caseSensitive);
+                if (kIsWeb) {
+                  setState(() {});
+                } else {
+                  _searchResult.addListener(() {
+                    if (_searchResult.hasResult) {
+                      setState(() {});
+                    }
+                  });
+                }
+              },
+            ),
+            Visibility(
+              visible: _searchResult.hasResult,
+              child: IconButton(
+                icon: const Icon(
+                  Icons.clear,
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  setState(() {
+                    _searchResult.clear();
+                  });
+                },
+              ),
+            ),
+            Visibility(
+              visible: _searchResult.hasResult,
+              child: IconButton(
+                icon: const Icon(
+                  Icons.keyboard_arrow_up,
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  _searchResult.previousInstance();
+                },
+              ),
+            ),
+            Visibility(
+              visible: _searchResult.hasResult,
+              child: IconButton(
+                icon: const Icon(
+                  Icons.keyboard_arrow_down,
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  _searchResult.nextInstance();
+                },
+              ),
+            ),
+          ],
+        ),
+        body: SfPdfViewer.network(
+          'https://cdn.syncfusion.com/content/PDFViewer/flutter-succinctly.pdf',
+          controller: _pdfViewerController,
+          currentSearchTextHighlightColor: Colors.yellow.withOpacity(0.6),
+          otherSearchTextHighlightColor: Colors.yellow.withOpacity(0.3),
+        ));
+  }
+
+```
+
+## Enable or disable the document link annotation
+
+By default, the PDF Viewer will navigate to the document link annotation’s destination position when you tap on the document link annotation. You can enable or disable the navigation of document link annotation using the **enableDocumentLinkAnnotation** property.
+
+```dart
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+      body: Container(
+          child: SfPdfViewer.network(
+              'https://cdn.syncfusion.com/content/PDFViewer/flutter-succinctly.pdf',
+              enableDocumentLinkAnnotation: false)));
+}
+```
+
+## Support and Feedback
+
+* For any other queries, reach our [Syncfusion support team](https://support.syncfusion.com/support/tickets/create) or post the queries through the [Community forums](https://www.syncfusion.com/forums) and submit a feature request or a bug through our [Feedback portal](https://www.syncfusion.com/feedback/flutter).
 * To renew the subscription, click [renew](https://www.syncfusion.com/sales/products) or contact our sales team at salessupport@syncfusion.com | Toll Free: 1-888-9 DOTNET.
 
 ## About Syncfusion
 
-Founded in 2001 and headquartered in Research Triangle Park, N.C., Syncfusion has more than 20,000 customers and more than 1 million users, including large financial institutions, Fortune 500 companies, and global IT consultancies.
+Founded in 2001 and headquartered in Research Triangle Park, N.C., Syncfusion has more than 20,000 customers and more than 1 million users, including large financial institutions, Fortune 500 companies, and global IT consultancies. 
 
-Today we provide 1,000+ controls and frameworks for web ([ASP.NET Core](https://www.syncfusion.com/aspnet-core-ui-controls), [ASP.NET MVC](https://www.syncfusion.com/aspnet-mvc-ui-controls), [ASP.NET WebForms](https://www.syncfusion.com/jquery/aspnet-web-forms-ui-controls), [JavaScript](https://www.syncfusion.com/javascript-ui-controls), [Angular](https://www.syncfusion.com/angular-ui-components), [React](https://www.syncfusion.com/react-ui-components), [Vue](https://www.syncfusion.com/vue-ui-components), and [Blazor](https://www.syncfusion.com/blazor-components), mobile ([Xamarin](https://www.syncfusion.com/xamarin-ui-controls), [Flutter](https://www.syncfusion.com/flutter-widgets), [UWP](https://www.syncfusion.com/uwp-ui-controls), and [JavaScript](https://www.syncfusion.com/javascript-ui-controls)), and desktop development ([WinForms](https://www.syncfusion.com/winforms-ui-controls), [WPF](https://www.syncfusion.com/wpf-ui-controls), and [UWP](https://www.syncfusion.com/uwp-ui-controls)). We provide ready-to deploy enterprise software for dashboards, reports, data integration, and big data processing. Many customers have saved millions in licensing fees by deploying our software.
+Today we provide 1,000+ controls and frameworks for web ([ASP.NET Core](https://www.syncfusion.com/aspnet-core-ui-controls), [ASP.NET MVC](https://www.syncfusion.com/aspnet-mvc-ui-controls), [ASP.NET WebForms](https://www.syncfusion.com/jquery/aspnet-web-forms-ui-controls), [JavaScript](https://www.syncfusion.com/javascript-ui-controls), [Angular](https://www.syncfusion.com/angular-ui-components), [React](https://www.syncfusion.com/react-ui-components), [Vue](https://www.syncfusion.com/vue-ui-components),  [Flutter](https://www.syncfusion.com/flutter-widgets), and [Blazor](https://www.syncfusion.com/blazor-components)), mobile ([Xamarin](https://www.syncfusion.com/xamarin-ui-controls), [.NET MAUI](https://www.syncfusion.com/maui-controls), [Flutter](https://www.syncfusion.com/flutter-widgets), [UWP](https://www.syncfusion.com/uwp-ui-controls), and [JavaScript](https://www.syncfusion.com/javascript-ui-controls)), and desktop development ([Flutter](https://www.syncfusion.com/flutter-widgets), [WinForms](https://www.syncfusion.com/winforms-ui-controls), [WPF](https://www.syncfusion.com/wpf-ui-controls), [UWP](https://www.syncfusion.com/uwp-ui-controls), [.NET MAUI](https://www.syncfusion.com/maui-controls), and [WinUI](https://www.syncfusion.com/winui-controls)). We provide ready-to deploy enterprise software for dashboards, reports, data integration, and big data processing. Many customers have saved millions in licensing fees by deploying our software.       
